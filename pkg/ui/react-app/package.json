@@ -45,7 +45,8 @@
     "tempusdominus-bootstrap-4": "^5.1.2",
     "tempusdominus-core": "^5.0.3",
     "typescript": "^3.3.3",
-    "use-query-params": "^1.1.6"
+    "use-query-params": "^1.1.6",
+    "@snyk/protect": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -54,7 +55,9 @@
     "test:debug": "react-scripts --inspect-brk test --runInBand --no-cache",
     "eject": "react-scripts eject",
     "lint:ci": "eslint --quiet \"src/**/*.{ts,tsx}\"",
-    "lint": "eslint --fix \"src/**/*.{ts,tsx}\""
+    "lint": "eslint --fix \"src/**/*.{ts,tsx}\"",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "prettier": {
     "singleQuote": true,
@@ -97,5 +100,6 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
-  }
+  },
+  "snyk": true
 }
